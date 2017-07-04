@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Hacker News</string>
+
+    <string name="no_story_comments_message">This story has no comments.</string>
+    <string name="refreshing_top_stories">Refreshing top stories...</string>
+    <string name="no_top_stories_message">Seems like we have no new top stories. Strang! isn\'t it?</string>
+    <string name="loading_top_stories">Loading top stories...</string>
+    <string name="loading_story_comments">Loading story comments...</string>
+</resources>

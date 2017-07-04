@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        import type="android.support.v4.content.ContextCompat" />
+        <variable name="storyCommentBinder" type="com.aqif.hackernews.screens.storycomments.recycler.adapter.StoryCommentBinderModel"/>
+    </data>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/comment_card_layout_margin_top"
+        app:cardElevation="@dimen/comment_card_elevation"
+        app:cardCornerRadius="@dimen/card_corner_radius">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/card_view_background"
+            android:onClick="@{()->storyCommentBinder.onStoryCommentViewItemClicked()}">
+
+            <View
+                android:id="@+id/comment_level_marker"
+                android:layout_marginLeft="1dp"
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                app:level="@{storyCommentBinder.level}"
+                android:background="@color/colorRecyclerBgDark"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textview_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/card_view_large_text_size"
+                    android:padding="@dimen/card_view_text_padding"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="@{storyCommentBinder.text}"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{storyCommentBinder.by}"
+                    android:textColor="@color/colorOfCounts"
+                    android:textSize="@dimen/card_view_large_text_size"
+                    android:textStyle="bold"
+                    android:paddingRight="@dimen/card_view_text_padding"
+                    android:paddingBottom="@dimen/card_view_text_padding"
+                    android:layout_below="@+id/textview_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"/>
+
+                <TextView
+                    android:id="@+id/textview_comments_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{storyCommentBinder.subCommentsCount}"
+                    android:textColor="@color/colorOfCounts"
+                    android:textSize="@dimen/card_view_large_text_size"
+                    android:textStyle="bold"
+                    android:paddingBottom="@dimen/card_view_text_padding"
+                    android:paddingLeft="@dimen/card_view_text_padding"
+                    android:layout_below="@+id/textview_content"
+                    android:layout_alignParentBottom="true"/>
+
+                <ImageView
+                    android:id="@+id/expanded_comments_ic"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:visibility="@{storyCommentBinder.collapseArrowVisibility}"
+                    android:src="@{storyCommentBinder.isCollapsed ? @drawable/ic_chevron_up_white_36dp : @drawable/ic_chevron_down_white_36dp}"
+                    android:tint="@color/colorOfCounts"
+                    android:layout_toRightOf="@+id/textview_comments_count"
+                    android:layout_below="@+id/textview_content"
+                    android:layout_alignParentBottom="true"/>
+
+            </RelativeLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</layout>

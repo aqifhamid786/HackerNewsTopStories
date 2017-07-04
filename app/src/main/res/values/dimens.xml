@@ -1,0 +1,27 @@
+<resources>
+
+    <dimen name="activity_horizontal_margin">4dp</dimen>
+    <dimen name="activity_vertical_margin">4dp</dimen>
+
+    <dimen name="zero">0dp</dimen>
+
+    <dimen name="story_comment_border_width_unit">4dp</dimen>
+    <dimen name="story_comment_border_margin">1dp</dimen>
+    <dimen name="story_comment_separator_height">1dp</dimen>
+
+    <dimen name="progress_bar_size">42dp</dimen>
+
+    <dimen name="text_view_message_side_padding">50dp</dimen>
+    <dimen name="text_view_message_top_padding">30dp</dimen>
+
+    <dimen name="comment_card_layout_margin_top">1dp</dimen>
+    <dimen name="comment_card_elevation">0dp</dimen>
+
+    <dimen name="card_layout_margin">4dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="card_corner_radius">0dp</dimen>
+    <dimen name="card_view_text_padding">8dp</dimen>
+    <dimen name="card_view_large_text_size">16sp</dimen>
+    <dimen name="card_view_medium_text_size">16sp</dimen>
+
+</resources>

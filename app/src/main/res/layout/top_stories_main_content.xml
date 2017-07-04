@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout_top_stories"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_top_stories"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/card_layout_margin"
+            android:paddingRight="@dimen/card_layout_margin"
+            android:paddingBottom="@dimen/card_layout_margin"
+            android:background="@color/colorRecyclerBgDark"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <TextView android:id="@+id/empty_list_message"
+        android:layout_below="@id/loading_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/text_view_message_side_padding"
+        android:paddingRight="@dimen/text_view_message_side_padding"
+        android:paddingTop="@dimen/text_view_message_top_padding"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="@string/loading_top_stories"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"/>
+
+</RelativeLayout>
+

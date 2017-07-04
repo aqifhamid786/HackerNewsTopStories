@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/top_story_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:textStyle="bold"
+        android:padding="@dimen/card_view_text_padding"
+        android:textSize="@dimen/card_view_medium_text_size"/>
+
+    <View
+        android:id="@+id/separator_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/story_comment_separator_height"
+        android:layout_below="@+id/top_story_title"
+        android:background="@color/cardview_dark_background" />
+
+    <TextView
+        android:id="@+id/comments_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/separator_top"
+        android:text="Comments"
+        android:gravity="center"
+        android:padding="@dimen/card_view_text_padding"
+        android:textSize="@dimen/card_view_medium_text_size"/>
+
+    <View
+        android:id="@+id/separator_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/story_comment_separator_height"
+        android:layout_below="@+id/comments_text"
+        android:background="@color/cardview_dark_background" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_story_comments"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:paddingTop="1dp"
+        android:paddingBottom="1dp"
+        android:layout_below="@+id/separator_bottom"
+        android:background="@color/colorRecyclerBgDark"/>
+
+    <ProgressBar
+        android:layout_width="@dimen/progress_bar_size"
+        android:layout_height="@dimen/progress_bar_size"
+        android:visibility="visible"
+        android:indeterminate="true"
+        android:id="@+id/loading_progress"
+        android:indeterminateTint="@color/colorProgressBarTint"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView android:id="@+id/empty_list_message"
+        android:layout_below="@id/loading_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/text_view_message_side_padding"
+        android:paddingRight="@dimen/text_view_message_side_padding"
+        android:paddingTop="@dimen/text_view_message_top_padding"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="@string/loading_story_comments"
+        android:gravity="center"/>
+
+</RelativeLayout>
+
